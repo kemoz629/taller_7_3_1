@@ -6,23 +6,17 @@ function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
 
-
-document.getElementById("regBtn").addEventListener("click", function() {
-
-    let password1 = document.getElementById("password1").value;
-
-     if (password1.length < 6) {
-    showAlertError(); 
-    return;
-  }})
-
-
 // Función para validar el formulario
 function validarFormulario() {
     // Obtener los valores de las contraseñas
     const password1 = document.getElementById("password1").value;
     const password2 = document.getElementById("password2").value;
-    
+
+    if (password1.length < 6) {
+        showAlertError(); 
+        return;
+    }
+
     // Verificar si el checkbox está marcado
     const terminos = document.getElementById("terminos").checked;
     
