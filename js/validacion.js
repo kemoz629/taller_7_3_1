@@ -9,8 +9,22 @@ function showAlertError() {
 // Función para validar el formulario
 function validarFormulario() {
     // Obtener los valores de las contraseñas
-    const password1 = document.getElementById("password1").value;
-    const password2 = document.getElementById("password2").value;
+
+const nombre = document.getElementById('nombre').value;
+const apellido = document.getElementById('apellido').value;
+const email = document.getElementById('email').value;
+const password1 = document.getElementById('password1').value;
+const password2 = document.getElementById('password2').value;
+
+if (nombre === '' ||
+    apellido === '' ||
+    email === '' ||
+    password1 === '' ||
+    password2 === '') {
+    showAlertError();
+    return;
+}
+
 
     if (password1.length < 6) {
         showAlertError(); 
@@ -43,19 +57,4 @@ document.addEventListener("DOMContentLoaded", function() {
     botonRegistro.addEventListener("click", validarFormulario);
 });
 
-const nombre = document.getElementById('nombre');
-const apellido = document.getElementById('apellido');
-const email = document.getElementById('email');
-const password1 = document.getElementById('password1');
-const password2 = document.getElementById('password2');
-const terminosCheckbox = document.getElementById('terminos');
-const registrarBtn = document.getElementById('regBtn');
 
-if (nombre === '' ||
-    apellido === '' ||
-    email === '' ||
-    password1 === '' ||
-    password2 === '') {
-    showAlertError();
-    return;
-}
